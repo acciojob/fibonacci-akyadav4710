@@ -1,10 +1,14 @@
 function fibonacci(num) {
 // your code here
-	const ans=0;
-	for (let index = 0; index < num; index++) {
-		ans = ans + index;
-	}
-	return ans;
+    if (num <= 1) return num; 
+
+    let a = 0, b = 1;
+    for (let i = 2; i <= num; i++) {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return b;
 }
 
 module.exports = fibonacci;
